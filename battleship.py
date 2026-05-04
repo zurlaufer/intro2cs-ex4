@@ -77,7 +77,6 @@ def create_computer_board(rows, columns, ship_sizes):
         locations = []
         for i in range(rows):
             for j in range(columns):
-                print(i, j, end = ' ')
                 if valid_ship(board, size, (i, j)):
                     locations.append((i, j))
         loc = helper.choose_ship_location(board, size, locations)
@@ -133,7 +132,7 @@ def main():
     computer_board = create_computer_board(computer['rows'], computer['columns'], computer['ship_sizes'])
     hiden_computer_board = init_board(computer['rows'], computer['columns'])
     if helper.NUM_ROWS == helper.NUM_COLUMNS == 0:
-        return 0
+            return
 
     b = False
     while not b:
@@ -144,8 +143,6 @@ def main():
         play_again = helper.get_input("play again? answer 'Y' or 'N'")
     if play_again == 'Y':
         main()
-    else:
-        return 0
 
 
 if __name__ == "__main__":
