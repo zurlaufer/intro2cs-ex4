@@ -48,8 +48,11 @@ def cell_name_to_loc(name):
 
 def get_location(board, size):
     helper.show_board(board)  # shows the board
-    name = helper.get_input("Enter the wanted position of the ship on the board as a letter to mark"
-                            " the columns and a number to mark the rows")  # gets the wanted location
+    prompt = (
+        "Enter the wanted position of the ship on the board as a letter to mark "
+        "the columns and a number to mark the rows"
+    )
+    name = helper.get_input(prompt)  # gets the wanted location
     is_legal, loc = legal_location(name)
     if is_legal:
         if valid_ship(board, size, loc):  # places the ship if it able to
@@ -126,13 +129,13 @@ def main():
     player = {'rows': helper.NUM_ROWS, 'columns': helper.NUM_COLUMNS,
               'ship_sizes': helper.SHIP_SIZES}  # makes player board
     player_board = create_player_board(player['rows'], player['columns'], player['ship_sizes'])
-    hiden_player_board = init_board(player['rows'], player['columns'])
+    _ = init_board(player['rows'], player['columns'])
     computer = {'rows': helper.NUM_ROWS, 'columns': helper.NUM_COLUMNS,
                 'ship_sizes': helper.SHIP_SIZES}  # makes computer board
     computer_board = create_computer_board(computer['rows'], computer['columns'], computer['ship_sizes'])
     hiden_computer_board = init_board(computer['rows'], computer['columns'])
     if helper.NUM_ROWS == helper.NUM_COLUMNS == 0:
-            return
+        return
 
     b = False
     while not b:
