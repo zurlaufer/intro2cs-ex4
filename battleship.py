@@ -3,7 +3,7 @@
 # WRITER : Zur Laufer , laufer.zur , 217644186
 # EXERCISE : intro2cs ex4 2026
 # DESCRIPTION: A simple program that answer all the questions
-# STUDENTS I DISCUSSED THE EXERCISE WITH: Elkana Daum
+# STUDENTS I DISCUSSED THE EXERCISE WITH: 
 #################################################################
 
 import helper
@@ -85,7 +85,6 @@ def create_computer_board(rows, columns, ship_sizes):
         loc = helper.choose_ship_location(board, size, locations)
         assert valid_ship(board, size, loc)
         board = place_ship(board, size, loc)
-    helper.show_board(board)
     return board
 
 
