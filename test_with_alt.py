@@ -1,11 +1,11 @@
-import importlib, sys
+import sys
+import importlib
 
 # Load helper_alt as 'helper' so battleship imports the alternate helper
 import helper_alt
 sys.modules['helper'] = helper_alt
 
 # Now import battleship fresh
-import importlib
 import battleship
 importlib.reload(battleship)
 
@@ -25,16 +25,25 @@ def run_tests():
     # Count ship cells
     total_ship_cells = sum(ship_sizes)
     found = count_ships(comp)
-    print(f"Expected ship cells: {total_ship_cells}, found: {found}")
+    print("Expected ship cells:", total_ship_cells, "found:", found)
     assert found == total_ship_cells, "create_computer_board did not place correct ship cells"
 
     # Test valid_ship on a known placement location
     loc = (0, 0)
     ok = battleship.valid_ship(b, ship_sizes[0], loc)
-    print(f"valid_ship at {loc} for size {ship_sizes[0]} -> {ok}")
+    print("valid_ship at", loc, "for size", ship_sizes[0], "->", ok)
 
     print('All tests with helper_alt passed.')
 
 
 if __name__ == '__main__':
+    # Also test interactive flow of create_player_board using scripted inputs
+    # Script inputs: place first ship at A1 (size 3), second ship at B1 (size 2)
+    helper_alt.set_inputs(['A1', 'B1'])
+    player_board = battleship.create_player_board(helper_alt.NUM_ROWS, helper_alt.NUM_COLUMNS, helper_alt.SHIP_SIZES)
+    # verify that player_board has correct ship cells
+    total_ship_cells = sum(helper_alt.SHIP_SIZES)
+    found = sum(r.count(helper_alt.SHIP) for r in player_board)
+    print(f"Player board ship cells: expected {total_ship_cells}, found {found}")
+    assert found == total_ship_cells, "create_player_board did not place ships correctly with scripted inputs"
     run_tests()

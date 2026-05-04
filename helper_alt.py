@@ -18,7 +18,10 @@ print_mapping = {WATER: '. ', SHIP: 'x ', HIT_WATER: 'o ', HIT_SHIP: '* '}
 
 def str_row(board, i):
     if i < len(board):
-        return (str(i + 1).rjust(2) + ' ' + ''.join(print_mapping.get(board[i][j], '? ') for j in range(len(board[i]))))
+        row = ''.join(
+            print_mapping.get(board[i][j], '? ') for j in range(len(board[i]))
+        )
+        return str(i + 1).rjust(2) + ' ' + row
     return ''
 
 
@@ -32,7 +35,12 @@ def show_board(board1, board2=None):
 
 
 def get_input(msg):
-    raise RuntimeError("get_input() called in non-interactive test helper")
+    # Return next scripted input if present (simulate interactive user)
+    if hasattr(get_input, "_inputs") and get_input._inputs:
+        val = get_input._inputs.pop(0)
+        print(msg + val)
+        return val
+    raise RuntimeError("get_input() called but no scripted inputs available")
 
 
 def show_msg(msg):
@@ -58,6 +66,15 @@ def choose_torpedo_target(board, locations):
 
 def seed(a):
     pass
+
+
+def set_inputs(lst):
+    """Provide a list of string inputs to be returned by `get_input` (FIFO)."""
+    get_input._inputs = list(lst)
+
+
+def clear_inputs():
+    get_input._inputs = []
 
 
 if __name__ == '__main__':
