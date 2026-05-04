@@ -1,0 +1,47 @@
+Thu Dec  5 18:46:56 IST 2024
+Archive:  /tmp/tmpintro/ex4/subs/laufer.zur
+  inflating: src/battleship.py       
+[[[5, 5, 5], [5, 5, 5]]]
+--> BEGIN TEST INFORMATION
+Test name: presubmit_main
+Module tested: battleship
+Function call: main()
+Expected return value: "[[[5, 5, 5], [5, 5, 5]]]\nI[A1]\n[[[6, 5, 5], [6, 5, 5]]]\nI[B1]\n('S', [[5, 5, 5], [5, 5, 5]], 2, [(0, 0), (0, 1), (0, 2)])\n('S', [[6, 5, 5], [6, 5, 5]], 2, [(0, 1), (0, 2)])\n[[[6, 6, 5], [6, 6, 5]], [[5, 5, 5], [5, 5, 5]]]\nI[A1]\n('T', [[5, 5, 5], [5, 5, 5]], [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 6, 5], [6, 6, 5]], [[8, 5, 5], [5, 5, 5]]]\nI[B1]\n('T', [[8, 5, 5], [5, 5, 5]], [(0, 1), (0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 8, 5], [6, 6, 5]], [[8, 8, 5], [5, 5, 5]]]\nI[C1]\n('T', [[8, 8, 5], [5, 5, 5]], [(0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 8, 7], [6, 6, 5]], [[8, 8, 7], [5, 5, 5]]]\nI[A2]\n('T', [[8, 8, 7], [5, 5, 5]], [(1, 0), (1, 1), (1, 2)])\n[[[8, 8, 7], [8, 6, 5]], [[8, 8, 7], [8, 5, 5]]]\nI[B2]\n('T', [[8, 8, 7], [8, 5, 5]], [(1, 1), (1, 2)])\n[[[8, 8, 7], [8, 8, 5]], [[8, 8, 7], [8, 8, 5]]]\nI[N]\n"
+More test options: {'setup': 0}
+--> END TEST INFORMATION
+**********************************************************************
+********************     There is a problem:
+********************     The test named 'presubmit_main' failed.
+**********************************************************************
+return value should be None
+result_code	presubmit_main	wrong	1
+5 passed tests out of 6 in test set named 'presubmit'.
+result_code	presubmit	5	1
+49 passed tests out of 49 in test set named 'initboard'.
+result_code	initboard	49	1
+36 passed tests out of 36 in test set named 'cellloc'.
+result_code	cellloc	36	1
+9 passed tests out of 9 in test set named 'validshipt'.
+result_code	validshipt	9	1
+12 passed tests out of 12 in test set named 'validshipf'.
+result_code	validshipf	12	1
+5 passed tests out of 5 in test set named 'playerboard'.
+result_code	playerboard	5	1
+5 passed tests out of 5 in test set named 'computerboard'.
+result_code	computerboard	5	1
+--> BEGIN TEST INFORMATION
+Test name: main_p
+Module tested: battleship
+Function call: main()
+Expected return value: "[[[5, 5, 5], [5, 5, 5]]]\nI[A1]\n[[[6, 5, 5], [6, 5, 5]]]\nI[B1]\n('S', [[5, 5, 5], [5, 5, 5]], 2, [(0, 0), (0, 1), (0, 2)])\n('S', [[6, 5, 5], [6, 5, 5]], 2, [(0, 1), (0, 2)])\n[[[6, 6, 5], [6, 6, 5]], [[5, 5, 5], [5, 5, 5]]]\nI[A1]\n('T', [[5, 5, 5], [5, 5, 5]], [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 6, 5], [6, 6, 5]], [[8, 5, 5], [5, 5, 5]]]\nI[B1]\n('T', [[8, 5, 5], [5, 5, 5]], [(0, 1), (0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 8, 5], [6, 6, 5]], [[8, 8, 5], [5, 5, 5]]]\nI[C1]\n('T', [[8, 8, 5], [5, 5, 5]], [(0, 2), (1, 0), (1, 1), (1, 2)])\n[[[8, 8, 7], [6, 6, 5]], [[8, 8, 7], [5, 5, 5]]]\nI[A2]\n('T', [[8, 8, 7], [5, 5, 5]], [(1, 0), (1, 1), (1, 2)])\n[[[8, 8, 7], [8, 6, 5]], [[8, 8, 7], [8, 5, 5]]]\nI[B2]\n('T', [[8, 8, 7], [8, 5, 5]], [(1, 1), (1, 2)])\n[[[8, 8, 7], [8, 8, 5]], [[8, 8, 7], [8, 8, 5]]]\nI[N]\n"
+More test options: {'setup': 0}
+--> END TEST INFORMATION
+**********************************************************************
+********************     There is a problem:
+********************     The test named 'main_p' failed.
+**********************************************************************
+return value should be None
+result_code	main_p	wrong	1
+0 passed tests out of 1 in test set named 'main'.
+result_code	main	0	1
+TESTING COMPLETED
